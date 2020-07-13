@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="Popsicle.View.MyCartPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:fonticons="clr-namespace:Popsicle.Resources.Fonts"
+             xmlns:effect="clr-namespace:Popsicle.Effects" 
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             effect:BarEffect.Color="{StaticResource White62}"
+             BackgroundColor="{StaticResource White62}">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,Auto,*,83"
+              Margin="0,10,0,0">
+
+            <Label Grid.Row="0" 
+                   Text="{x:Static fonticons:FontIcons.Chevron_left}"
+                   FontFamily="FontAwesomeBold"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   FontSize="{StaticResource Font11}"
+                   TextColor="{StaticResource Tertiary}"
+                   Margin="30,0,30,15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PopHomeCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Grid.Row="1" 
+                   Text="My Cart" 
+                   FontSize="{StaticResource Font34}"
+                   TextColor="{StaticResource Tertiary}"
+                   Margin="30,0,30,40"/>
+            
+            <sh:Shadows Grid.Row="2"
+                        CornerRadius="24"
+                        Shades="{sh:SingleShade Offset='0, 14',Color=#66CCD9EE}">
+                <CollectionView
+                        Margin="30,0"
+                        x:Name="PopsicleList"
+                        ItemsSource="{Binding Popsicle}"
+                        BackgroundColor="Transparent">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="20"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItemView 
+                                          BackgroundColor="Transparent">
+                                            <Grid
+                                            WidthRequest="60">
+                                                <BoxView
+                                                CornerRadius="0, 12, 0, 12"
+                                                Margin="0, 12, 0, 0"/>
+                                                <pancake:PancakeView
+                                                    HasShadow="True"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    BackgroundColor="{StaticResource Primary}"
+                                                    CornerRadius="{OnPlatform Android=26,iOS=40}"
+                                                    HeightRequest="{OnPlatform Android=42,iOS=70}"
+                                                    WidthRequest="{OnPlatform Android=42,iOS=70}">
+                                                    <Label Text="{x:Static fonticons:FontIcons.Trash}"
+                                                            FontFamily="FontAwesomeBold"
+                                                            HorizontalTextAlignment="Center"
+                                                            VerticalTextAlignment="Center"
+                                                            FontSize="{StaticResource Font16}"
+                                                            TextColor="{StaticResource White}"/>
+                                                </pancake:PancakeView>
+                                            </Grid>
+                                        </SwipeItemView>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <pancake:PancakeView
+                                    BackgroundColor="#E5FFFFFF"
+                                    VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    CornerRadius="{OnPlatform Android=10,iOS=24}"
+                                    HeightRequest="{OnPlatform Android=100,iOS=100}"
+                                    WidthRequest="{OnPlatform Android=315,iOS=315}">
+
+                                    <Grid RowDefinitions="*,*"
+                                          ColumnDefinitions="35*,25*,25*,25*">
+                                        <pancake:PancakeView
+                                                Grid.Column="0"
+                                                Grid.RowSpan="2"
+                                                BackgroundColor="{Binding backgroundColor}"
+                                                HasShadow="False"
+                                                VerticalOptions="CenterAndExpand"
+                                                CornerRadius="{OnPlatform Android='0,10,0,10',iOS=4}"
+                                                HeightRequest="{OnPlatform Android=100,iOS=100}"
+                                                WidthRequest="{OnPlatform Android=99,iOS=99}">
+                                            <Image Source="{Binding Image}"
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        Aspect="AspectFit"
+                                                        HeightRequest="83"
+                                                        WidthRequest="37"/>
+                                        </pancake:PancakeView>
+
+                                        <StackLayout Grid.Column="1" 
+                                                     Grid.RowSpan="2"
+                                                     VerticalOptions="CenterAndExpand"
+                                                     HorizontalOptions="Center">
+                                            <Label Text="{Binding name}"  
+                                                   TextColor="{StaticResource Primary}" 
+                                                   FontSize="{StaticResource Font16}"
+                                                   VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding flavor}" 
+                                                   TextColor="{StaticResource Primary}" 
+                                                   FontSize="{StaticResource Font16}"
+                                                   FontAttributes="Bold"
+                                                   VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding value}" 
+                                                   TextColor="{StaticResource Primary}" 
+                                                   FontSize="{StaticResource Font16}"
+                                                   VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+
+                                        <Label Grid.Column="2"
+                                               Grid.RowSpan="2"
+                                               Text="3" 
+                                               TextColor="{StaticResource Primary}" 
+                                               FontSize="{StaticResource Font36}"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"/>
+
+                                        <pancake:PancakeView
+                                            Grid.Column="3"
+                                            Grid.Row="0"
+                                            HasShadow="True"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="CenterAndExpand"
+                                            BackgroundColor="{StaticResource White}"
+                                            CornerRadius="{OnPlatform Android=26,iOS=40}"
+                                            HeightRequest="{OnPlatform Android=30,iOS=70}"
+                                            WidthRequest="{OnPlatform Android=30,iOS=70}">
+                                            <Label Text="{x:Static fonticons:FontIcons.Plus}"
+                                                    FontFamily="FontAwesomeBold"
+                                                    HorizontalTextAlignment="Center"
+                                                    VerticalTextAlignment="Center"
+                                                    FontSize="{StaticResource Font10}"
+                                                    TextColor="{StaticResource Primary}"/>
+                                        </pancake:PancakeView>
+
+                                        <pancake:PancakeView
+                                            Grid.Column="3"
+                                            Grid.Row="1"
+                                            HasShadow="True"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="CenterAndExpand"
+                                            BackgroundColor="{StaticResource White}"
+                                            CornerRadius="{OnPlatform Android=26,iOS=40}"
+                                            HeightRequest="{OnPlatform Android=30,iOS=70}"
+                                            WidthRequest="{OnPlatform Android=30,iOS=70}">
+                                            <Label Text="{x:Static fonticons:FontIcons.Minus}"
+                                                    FontFamily="FontAwesomeBold"
+                                                    HorizontalTextAlignment="Center"
+                                                    VerticalTextAlignment="Center"
+                                                    FontSize="{StaticResource Font10}"
+                                                    TextColor="{StaticResource Primary}"/>
+                                        </pancake:PancakeView>
+                                    </Grid>
+
+                                </pancake:PancakeView>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </sh:Shadows>
+            <sh:Shadows Grid.Row="3"
+                        CornerRadius="24"
+                        Shades="{sh:SingleShade Offset='24, 0',Color=#66CCD9EE}">
+                <pancake:PancakeView 
+                                 Padding="0"
+                                 HasShadow="True"
+                                 Elevation="6"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="FillAndExpand"
+                                 BackgroundColor="{StaticResource White}"
+                                 HeightRequest="83">
+                    <Grid>
+                        <StackLayout Orientation="Vertical"
+                                 Margin="30,0,0,0"
+                                 VerticalOptions="CenterAndExpand">
+                            <Label Text="Total Amount"
+                               TextColor="{StaticResource Primary}"
+                               FontSize="{StaticResource Font11}"
+                               VerticalTextAlignment="Center"/>
+                            <Label Text="$ 32"
+                               TextColor="{StaticResource Primary}"
+                               FontSize="{StaticResource Font26}"
+                               VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Button Text="Place Order"
+                                BackgroundColor="{StaticResource Secundary}"
+                                TextColor="{StaticResource White}"
+                                CornerRadius="10"
+                                HeightRequest="48"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="End"
+                                Margin="0,0,30,0"
+                                WidthRequest="120"/>
+                    </Grid>
+
+                </pancake:PancakeView>
+            </sh:Shadows>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

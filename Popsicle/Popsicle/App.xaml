@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Popsicle.App">
+    <Application.Resources>
+        <Color x:Key="Primary">#05293C</Color>
+        <Color x:Key="Secundary">#FF488A</Color>
+        <Color x:Key="Tertiary">#222222</Color>
+        <Color x:Key="White">#FFFFFF</Color>
+        <Color x:Key="White37">#5EFFFFFF</Color>
+        <Color x:Key="White62">#9EFFFFFF</Color>
+        <Color x:Key="DarkBlue">#03283c</Color>
+        <Color x:Key="Black">#000000</Color>
+        <Color x:Key="Gray">#E1E5EB</Color>
+        
+        
+
+
+        <OnPlatform x:Key="Font10" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="10"/>
+            <On Platform="iOS" Value="11"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font11" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="11"/>
+            <On Platform="iOS" Value="13"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font14" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="14"/>
+            <On Platform="iOS" Value="17"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font15" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="15"/>
+            <On Platform="iOS" Value="18"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font16" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="16"/>
+            <On Platform="iOS" Value="19"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font19" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="19"/>
+            <On Platform="iOS" Value="21"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font21" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="21"/>
+            <On Platform="iOS" Value="23"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font26" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="26"/>
+            <On Platform="iOS" Value="29"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font32" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="32"/>
+            <On Platform="iOS" Value="35"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font34" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="34"/>
+            <On Platform="iOS" Value="37"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font36" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="36"/>
+            <On Platform="iOS" Value="39"/>
+        </OnPlatform>
+    </Application.Resources>
+</Application>

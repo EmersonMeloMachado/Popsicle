@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             xmlns:effect="clr-namespace:Popsicle.Effects" 
+             xmlns:fonticons="clr-namespace:Popsicle.Resources.Fonts"
+             mc:Ignorable="d"
+             x:Class="Popsicle.MainPage"
+             BackgroundColor="{Binding BackgroundColor}"
+             effect:BarEffect.Color="{Binding BackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="auto,60,80,*,auto"
+          RowSpacing="0">
+        
+        <Image Aspect="AspectFill"
+               Source="pngfuel"
+               Grid.RowSpan="5"
+               Margin="0,48,0,0"/>
+
+        <pancake:PancakeView 
+                   Margin="29,30,0,0"
+                   HorizontalOptions="Start"
+                   CornerRadius="18"
+                   HeightRequest="30"
+                   WidthRequest="30"
+                   Padding="{OnPlatform Android='14,15',iOS='10,15,10,30'}"
+                   BackgroundColor="{StaticResource White}">
+            <Image Source="Group.png"
+                   Aspect="AspectFit"/>
+            <pancake:PancakeView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BackgroundColorCommand}"/>
+            </pancake:PancakeView.GestureRecognizers>
+        </pancake:PancakeView>
+
+        <Label Grid.Row="1"
+                Margin="29,10,0,0"
+                HorizontalOptions="Start"
+                VerticalOptions="CenterAndExpand"
+                LineBreakMode="CharacterWrap"
+                FontSize="{StaticResource Font34}"
+                TextColor="{StaticResource Primary}"
+                Text="PopSicle"/>
+
+        <Label Grid.Row="2"
+                Margin="29,0,0,0"
+                Padding="0"
+                HorizontalOptions="Start"
+                VerticalOptions="CenterAndExpand"
+                FontSize="{StaticResource Font16}"
+                TextColor="{StaticResource Primary}" 
+                Text="Order your favourate dessert and&#10;snacks anytime anywhere. Explore the&#10;delicious varieties here..."/>
+
+        <StackLayout Grid.Row="4" 
+                     Orientation="Horizontal"
+                     HorizontalOptions="EndAndExpand"
+                     Margin="0,0,25,30">
+
+            <Label Text="Explore"
+                   FontSize="{StaticResource Font15}"
+                   TextColor="{StaticResource Primary}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+
+            <pancake:PancakeView
+                    Margin="11,0,0,0"
+                    Padding="6"
+                    CornerRadius="{OnPlatform Android=26,iOS=40}"
+                    HasShadow="True"
+                    HeightRequest="{OnPlatform Android=41,iOS=70}"
+                    HorizontalOptions="End"
+                    IsClippedToBounds="True"
+                    Visual="Material"
+                    WidthRequest="{OnPlatform Android=41,iOS=70}"
+                    BackgroundColor="{StaticResource Secundary}">
+                <Label Text="{x:Static fonticons:FontIcons.Arrow_right}"
+                       FontFamily="FontAwesomeBold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{StaticResource Font14}"
+                       TextColor="{StaticResource White}"/>
+                <pancake:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding HomePageCommand}"/>
+                </pancake:PancakeView.GestureRecognizers>
+            </pancake:PancakeView>
+        </StackLayout>
+    </Grid>
+</ContentPage>
