@@ -17,11 +17,34 @@ namespace Popsicle.iOS.Effects
 
             if (statusBarEffect != null)
             {
-                UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
-                if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+                UIView statusBar;
+                if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                 {
-                    statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
+                    int tag = 123; // Customize this tag as you want
+                    UIWindow window = UIApplication.SharedApplication.Windows.FirstOrDefault();
+                    statusBar = window.ViewWithTag(tag);
+                    if (statusBar == null)
+                    {
+                        statusBar = new UIView(UIApplication.SharedApplication.StatusBarFrame);
+                        statusBar.Tag = tag;
+                    }
+                     statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
+                     window.AddSubview(statusBar);
                 }
+                else
+                {
+                    statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+                    if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+                    {
+                        statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
+                    }
+                }
+
+                //UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+                //if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+                //{
+                //    statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
+               // }
             }
         }
 

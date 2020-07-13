@@ -27,7 +27,7 @@
                    CornerRadius="18"
                    HeightRequest="30"
                    WidthRequest="30"
-                   Padding="{OnPlatform Android='14,15',iOS='10,15,10,30'}"
+                   Padding="{OnPlatform Android='14,15',iOS='14,15'}"
                    BackgroundColor="{StaticResource White}">
             <Image Source="Group.png"
                    Aspect="AspectFit"/>
@@ -69,7 +69,7 @@
                     Margin="11,0,0,0"
                     Padding="6"
                     CornerRadius="{OnPlatform Android=26,iOS=40}"
-                    HasShadow="True"
+                    HasShadow="False"
                     HeightRequest="{OnPlatform Android=41,iOS=70}"
                     HorizontalOptions="End"
                     IsClippedToBounds="True"

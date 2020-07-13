@@ -136,9 +136,20 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Popsicle\Popsicle.csproj">
-      <Project>{86F4095C-A856-4DE0-9745-E54BA9CB9410}</Project>
+      <Project>{FA4C30E3-A35D-4A04-B971-0259FB3F977A}</Project>
       <Name>Popsicle</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\delete.png" />
+    <BundleResource Include="Resources\Filtro.png" />
+    <BundleResource Include="Resources\Group.png" />
+    <BundleResource Include="Resources\Icecream2.png" />
+    <BundleResource Include="Resources\Icecream3.png" />
+    <BundleResource Include="Resources\Icecream4.png" />
+    <BundleResource Include="Resources\Icecream6.png" />
+    <BundleResource Include="Resources\pngfuel.png" />
+    <BundleResource Include="Resources\Vector.png" />
+  </ItemGroup>
 </Project>

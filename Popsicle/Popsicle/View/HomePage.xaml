@@ -10,6 +10,8 @@
              xmlns:effect="clr-namespace:Popsicle.Effects" 
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
              xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              effect:BarEffect.Color="{StaticResource White62}"
              BackgroundColor="{StaticResource White62}">
     <ContentPage.Content>

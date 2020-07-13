@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Popsicle.iOS
 {
@@ -22,6 +23,7 @@ namespace Popsicle.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Forms.SetFlags("SwipeView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
