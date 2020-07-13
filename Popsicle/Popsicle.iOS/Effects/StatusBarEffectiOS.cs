@@ -1,8 +1,8 @@
-﻿using System.Linq;
+﻿using UIKit;
 using Foundation;
-using Popsicle.iOS.Effects;
-using UIKit;
+using System.Linq;
 using Xamarin.Forms;
+using Popsicle.iOS.Effects;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ResolutionGroupName("Popsicle")]
@@ -20,7 +20,7 @@ namespace Popsicle.iOS.Effects
                 UIView statusBar;
                 if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                 {
-                    int tag = 123; // Customize this tag as you want
+                    int tag = 123;
                     UIWindow window = UIApplication.SharedApplication.Windows.FirstOrDefault();
                     statusBar = window.ViewWithTag(tag);
                     if (statusBar == null)
@@ -39,12 +39,6 @@ namespace Popsicle.iOS.Effects
                         statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
                     }
                 }
-
-                //UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
-                //if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
-                //{
-                //    statusBar.BackgroundColor = statusBarEffect.BackgroundColor.ToUIColor();
-               // }
             }
         }
 
