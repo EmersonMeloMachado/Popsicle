@@ -27,3 +27,10 @@ O que foi usado no desenvolvimento:
 ### GIF
 <img src="https://user-images.githubusercontent.com/28712287/87444006-9c082080-c5cc-11ea-8592-600048bd69c0.gif?w=250" height="580" width="300">
 
+
+## Créditos
+### Design
+https://dribbble.com/shots/12207071-Popsicle-Online-food-delivery
+![557f5ccf07e19f029892767fb2cbde88](https://user-images.githubusercontent.com/28712287/87444927-c9a19980-c5cd-11ea-8011-777bddc3d935.png)
+![67f405d93d8312d5689d798bf8bea6ab](https://user-images.githubusercontent.com/28712287/87444938-cc9c8a00-c5cd-11ea-8861-b85a2a4a3c21.png)
+
