@@ -1,5 +1,5 @@
 
-# Xamarin.Forms # Popsicle
+# Xamarin.Forms Popsicle
 Conceito de App desenvolvido com XamarinForms. </br>
 O que foi usado no desenvolvimento:
 - Padrão MVVM (sem framework)
