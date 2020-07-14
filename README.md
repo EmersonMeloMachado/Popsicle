@@ -32,8 +32,6 @@ O que foi usado no desenvolvimento:
 ### Design
 https://dribbble.com/shots/12207071-Popsicle-Online-food-delivery
 
-<img src="https://user-images.githubusercontent.com/28712287/87444927-c9a19980-c5cd-11ea-8011-777bddc3d935.png" height="600" width="800">
+<img src="https://user-images.githubusercontent.com/28712287/87445897-0326d480-c5cf-11ea-96f9-d2490c1adb4e.png" height="600" width="800">
 
-<img src="https://user-images.githubusercontent.com/28712287/87444938-cc9c8a00-c5cd-11ea-8861-b85a2a4a3c21.png" height="600" width="800">
-
-
+<img src="https://user-images.githubusercontent.com/28712287/87445890-015d1100-c5cf-11ea-9e3a-d71203418cd4.png" height="600" width="800">
