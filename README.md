@@ -11,3 +11,10 @@ O que foi usado no desenvolvimento:
 - Shapes (Path) - Nova feature do Xamarin.Forms (https://docs.microsoft.com/pt-br/xamarin/xamarin-forms/user-interface/shapes/path)
 - CollectionView
 - XamarinForms 4.7.0.968
+
+##Screenshots
+###Android
+![popsicle_android](https://user-images.githubusercontent.com/28712287/87440968-f1dac980-c5c8-11ea-92b3-650802ae04fa.jpg)
+![popsicle_android_2](https://user-images.githubusercontent.com/28712287/87441056-0919b700-c5c9-11ea-95a0-6ed6fcf3f308.jpg)
+![popsicle_android_3](https://user-images.githubusercontent.com/28712287/87441110-18990000-c5c9-11ea-8245-a416403c7e41.jpg)
+![popsicle_android_4](https://user-images.githubusercontent.com/28712287/87441125-1cc51d80-c5c9-11ea-9b80-a5c5811d085c.jpg)
